@@ -1,5 +1,7 @@
 "use client";
 
+"use client"
+
 import { BiSearch } from "react-icons/bi";
 
 const Search = () => {
@@ -12,8 +14,8 @@ const Search = () => {
                 <div className="hidden sm:block text-sm font-semibold px-6 border-x-[1px] flex-1 text-center">
                     Anyweek
                 </div>
-                <div className="text-sm pl-6 pr-2 text-gray-600 flex flex-row items-center gap-3">
-                    Add guests
+                <div className=" hidden sm:block text-sm pl-6 pr-2 text-gray-600 flex-row items-center gap-3">
+                    Guests
                 </div>
                 <div className="p-2 bg-blue-500 rounded-full text-white">
                     <BiSearch size={18}/>
