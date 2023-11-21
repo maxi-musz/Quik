@@ -12,6 +12,7 @@ import {
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from "./Modals";
 import Heading from "../Heading";
+import Input from "../inputs/input";
 
 const RegisterModal = () => {
 
@@ -55,6 +56,66 @@ const RegisterModal = () => {
             <Heading
             title="Welcome to Quik"
             subtitle="create your account to sell your goods faster💨, or buy fairly used and new products at best prices🔥"
+            />
+
+            {/* FULL NAME */}
+            <Input 
+            id="name"
+            label="Full Name"
+            disabled={isloading}
+            register={register}
+            errors={errors}
+            required
+            />
+
+            {/* USERNAME */}
+            <Input 
+            id="username"
+            label="Username"
+            disabled={isloading}
+            register={register}
+            errors={errors}
+            required
+            />
+
+            {/* EMAIL */}
+            <Input 
+            id="email"
+            label="Email"
+            disabled={isloading}
+            register={register}
+            errors={errors}
+            required
+            />
+
+            {/* PHONE */}
+            <Input 
+            id="phone"
+            label="Phone"
+            disabled={isloading}
+            register={register}
+            errors={errors}
+            required
+            />
+
+            {/* PASSWORD */}
+            <Input 
+            id="password"
+            label="Password"
+            disabled={isloading}
+            register={register}
+            errors={errors}
+            required
+            />
+
+            {/* VERIFY */}
+            <Input 
+            id="verifyPassword"
+            label="Verify password"
+            disabled={isloading}
+            register={register}
+            errors={errors}
+            required
             />
         </div>
     )
