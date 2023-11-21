@@ -111,6 +111,9 @@ const Modal:React.FC<ModalProps> = ({
                                     onClick={handleSubmit}
                                     />
                                 </div>
+
+                                {/* OAUTH */}
+                                {footer}
                             </div>
                         </div>
                     </div>

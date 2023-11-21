@@ -13,6 +13,8 @@ import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from "./Modals";
 import Heading from "../Heading";
 import Input from "../inputs/input";
+import toast from "react-hot-toast";
+import Button from "../Button";
 
 const RegisterModal = () => {
 
@@ -44,7 +46,7 @@ const RegisterModal = () => {
             registerModal.onClose();
         })
         .catch((error) => {
-            console.log(error)
+            toast.error("Something went wrong")
         })
         .finally(() =>  {
             setIsLoading(false);
@@ -58,20 +60,10 @@ const RegisterModal = () => {
             subtitle="create your account to sell your goods faster💨, or buy fairly used and new products at best prices🔥"
             />
 
-            {/* FULL NAME */}
+            {/* NAME */}
             <Input 
             id="name"
-            label="Full Name"
-            disabled={isloading}
-            register={register}
-            errors={errors}
-            required
-            />
-
-            {/* USERNAME */}
-            <Input 
-            id="username"
-            label="Username"
+            label="Name"
             disabled={isloading}
             register={register}
             errors={errors}
@@ -82,16 +74,6 @@ const RegisterModal = () => {
             <Input 
             id="email"
             label="Email"
-            disabled={isloading}
-            register={register}
-            errors={errors}
-            required
-            />
-
-            {/* PHONE */}
-            <Input 
-            id="phone"
-            label="Phone"
             disabled={isloading}
             register={register}
             errors={errors}
@@ -120,6 +102,30 @@ const RegisterModal = () => {
         </div>
     )
 
+    const footerContent = (
+        <div className="flex flex-col gap-4 mt-3">
+            <hr />
+            <hr />
+            <Button
+            outline
+            label="Continue with Google"
+            icon={FcGoogle}
+            onClick={() => {}}
+            />
+
+            <div className="justify-center text-neutral-500 items-center mt-4 font-light">
+                <div className="flex flex-row items-center gap-2">
+                    <div>
+                        Already have an account?
+                    </div> 
+                    <div onClick={registerModal.onClose} className="text-neutral-800 cursor-pointer hover:underline">
+                        Sign in
+                    </div> 
+                </div>
+            </div>
+        </div>
+    )
+
     return ( 
         <Modal
         disabled={isloading}
@@ -129,6 +135,7 @@ const RegisterModal = () => {
         onClose={registerModal.onClose}
         onSubmit={handleSubmit(onSubmit)}
         body={bodyContent}
+        footer={footerContent}
         />
      );
 }
